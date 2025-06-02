@@ -4,7 +4,7 @@ Dart__STD_LIST__class
 A doubly linked list in Dart with a more familiar interface from C++'s std::list.
 
 //Available methods:  
-  
+  ```
 //-push_front                               - Insert at the beginning of the list.  
 //-push_back                                - Insert at the end of the list.  
 //-begin                                    - Get an "iterator" to the first element of the list.  
@@ -27,3 +27,6 @@ A doubly linked list in Dart with a more familiar interface from C++'s std::list
 //-iterration_lopp                          - iterate over the list and execute the function.  
 //-range_iterrator_count                    - get the number of elements in the specified range of "iterators".  
   
+//get__value()                              - gets the value from the "iterator".  
+//set__value()                              - replaces the existing value by the "iterator"
+```
