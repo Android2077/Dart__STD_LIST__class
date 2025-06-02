@@ -27,6 +27,6 @@ A doubly linked list in Dart with a more familiar interface from C++'s std::list
 //-iterration_lopp                          - iterate over the list and execute the function.  
 //-range_iterrator_count                    - get the number of elements in the specified range of "iterators".  
   
-//get__value()                              - gets the value from the "iterator".  
+//get__value()                              - Gets from the "iterator" a reference (if the element is a class object) or a value to a previously added element.
 //set__value()                              - replaces the existing value by the "iterator"
 ```
