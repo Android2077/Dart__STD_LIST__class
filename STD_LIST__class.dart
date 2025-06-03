@@ -66,7 +66,7 @@ class STD_LIST__class<T>
   size
   */
 
-  void iterration_lopp(STD_LIST_Iterator<T>? First_Range_it, STD_LIST_Iterator<T>? Last_Range_it, Function(STD_LIST__class<T> class_ref, STD_LIST_Iterator<T>) user_func)
+  void iterration_lopp(STD_LIST_Iterator<T>? First_Range_it, STD_LIST_Iterator<T>? Last_Range_it, bool Function(STD_LIST__class<T> class_ref, STD_LIST_Iterator<T>) user_func)
   {
 
     //----------------------------------------------
