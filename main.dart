@@ -393,7 +393,7 @@ void main()
   STD_LIST_Iterator<int>? it_range_Last_3  = std_list_.get__Element_by_Index_From_Begin__Slowly(7);
 
 
-  Function(STD_LIST__class<int> class_ref, STD_LIST_Iterator<int>) user_func;        //Функция, которая удет вызываться для каждого итерируемого "итератора" из указанного диапазона.
+  bool Function(STD_LIST__class<int> class_ref, STD_LIST_Iterator<int>) user_func;        //Функция, которая удет вызываться для каждого итерируемого "итератора" из указанного диапазона.
 
   user_func = (STD_LIST__class<int> class_ref, STD_LIST_Iterator<int> it)
   {
@@ -401,7 +401,8 @@ void main()
     //it        - итерируемый "итератор"
 
     print('it: ${it.get__value()}');
-
+ 
+    return true;   //true - значит нужно продолжить итерацию по указанному диапазону "итераторов". false - значит нужно завершить цикл итерации и завершить выполненеи самом функции "iterration_lopp".
   };
 
 
