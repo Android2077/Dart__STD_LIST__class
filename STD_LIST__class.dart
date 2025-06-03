@@ -77,7 +77,12 @@ class STD_LIST__class<T>
     //----------------------------------------------------
     while(temp_it != Last_Range_it)
     {
-      user_func(this, temp_it);
+      final bool res = user_func(this, temp_it);
+
+      if(res == false)
+      {
+        return;   //Значит Пользователь возвратил сообщение из функции, что он хочет завершить итерацию.
+      }
 
       temp_it = temp_it._next!;
     }
@@ -85,6 +90,7 @@ class STD_LIST__class<T>
     user_func(this, temp_it);
     //----------------------------------------------------
 
+    
   }
 
   int range_iterrator_count(STD_LIST_Iterator<T>? First_Range_it, STD_LIST_Iterator<T>? Last_Range_it)
