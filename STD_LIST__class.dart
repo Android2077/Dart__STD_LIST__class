@@ -985,6 +985,8 @@ class STD_LIST__class<T>
         _Begin_Element_ref = null;
         _Last_Element_ref  = null;
 
+        _Size = 0;
+        
         return;
       }
       //--------------------------------------
