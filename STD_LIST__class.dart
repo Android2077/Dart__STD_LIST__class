@@ -358,7 +358,18 @@ class STD_LIST__class<T>
     return _erase_iterrator_Range(First_Range_it!, Last_Range_it!, true);
   }
 
-
+  STD_LIST_Iterator<T>? std_next_with_null(STD_LIST_Iterator<T>? Iterrator_to_Elem)
+  {
+    if(Iterrator_to_Elem == null)
+    {
+      return _Begin_Element_ref;
+    }
+    else
+    {
+      return Iterrator_to_Elem!._next;
+    }
+  }
+  
   STD_LIST_Iterator<T>? std_next(STD_LIST_Iterator<T>? Iterrator_to_Elem)
   {
     return Iterrator_to_Elem!._next;
@@ -369,6 +380,20 @@ class STD_LIST__class<T>
     return Iterrator_to_Elem!._prev;
   }
 
+  STD_LIST_Iterator<T>? std_next_advanced_with_null(STD_LIST_Iterator<T>? Iterrator_to_Elem, int num_step)
+  {
+
+    if(Iterrator_to_Elem == null)
+    {
+      return _Begin_Element_ref;
+    }
+    else
+    {
+      return std_next_advanced(Iterrator_to_Elem, num_step);
+    }
+
+  }
+  
   STD_LIST_Iterator<T>? std_next_advanced(STD_LIST_Iterator<T>? Iterrator_to_Elem, int num_step)
   {
 
