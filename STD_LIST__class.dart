@@ -69,26 +69,30 @@ class STD_LIST__class<T>
   void iterration_lopp(STD_LIST_Iterator<T>? First_Range_it, STD_LIST_Iterator<T>? Last_Range_it, bool Function(STD_LIST__class<T> class_ref, STD_LIST_Iterator<T>) user_func)
   {
 
-    //----------------------------------------------
-    STD_LIST_Iterator<T> temp_it = First_Range_it!;
-    //----------------------------------------------
-
-
-    //----------------------------------------------------
-    while(temp_it != Last_Range_it)
+    if(First_Range_it != null && Last_Range_it != null)
     {
-      final bool res = user_func(this, temp_it);
 
-      if(res == false)
+      //----------------------------------------------
+      STD_LIST_Iterator<T> temp_it = First_Range_it!;
+      //----------------------------------------------
+
+
+      //----------------------------------------------------
+      while (temp_it != Last_Range_it)
       {
-        return;   //Значит Пользователь возвратил сообщение из функции, что он хочет завершить итерацию.
+        final bool res = user_func(this, temp_it);
+
+        if (res == false)
+        {
+          return; //Значит Пользователь возвратил сообщение из функции, что он хочет завершить итерацию.
+        }
+
+        temp_it = temp_it._next!;
       }
 
-      temp_it = temp_it._next!;
+      user_func(this, temp_it);
+      //----------------------------------------------------
     }
-
-    user_func(this, temp_it);
-    //----------------------------------------------------
 
     
   }
