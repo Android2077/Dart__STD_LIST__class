@@ -100,44 +100,49 @@ class STD_LIST__class<T>
   int range_iterrator_count(STD_LIST_Iterator<T>? First_Range_it, STD_LIST_Iterator<T>? Last_Range_it)
   {
 
-    //Функция работает с учетом того, что - First_Range_it и Last_Range_it - являются корректными и валидными. Предоставить First_Range_it и Last_Range_it - корректными и валидными являвется задача того, что вызывает эту функцию, а не самой даннйо функции.
-
-    //----------------------------------------------
-    int cntr = 0;
-    STD_LIST_Iterator<T> temp_it = First_Range_it!;
-    //----------------------------------------------
-
-
-    //----------------------------------------------------
-    for(;;)
+    if(First_Range_it != null && Last_Range_it != null)
     {
 
-      //----------------------------------
-      cntr++;
+      //----------------------------------------------
+      int cntr = 0;
+      STD_LIST_Iterator<T> temp_it = First_Range_it!;
+      //----------------------------------------------
 
-      temp_it = temp_it._next!;
 
-      if(temp_it == Last_Range_it)
+      //----------------------------------------------------
+      for (;;)
       {
-        cntr++;         //Прибавляем заключительную итерацию.
+        //----------------------------------
+        cntr++;
 
-        return cntr;
+        temp_it = temp_it._next!;
+
+        if (temp_it == Last_Range_it)
+        {
+          cntr++; //Прибавляем заключительную итерацию.
+
+          return cntr;
+        }
+        //----------------------------------
+
       }
-      //----------------------------------
+      //----------------------------------------------------
 
     }
-    //----------------------------------------------------
-
+    else
+    {
+      return 0;
+    }
   }
 
-  STD_LIST_Iterator<T> begin()
+  STD_LIST_Iterator<T>? begin()
   {
-    return _Begin_Element_ref!;
+    return _Begin_Element_ref;
   }
 
-  STD_LIST_Iterator<T> last()
+  STD_LIST_Iterator<T>? last()
   {
-    return _Last_Element_ref!;
+    return _Last_Element_ref;
   }
 
   STD_LIST_Iterator<T>? get__Element_by_Index_From_Begin__Slowly(int Index)
